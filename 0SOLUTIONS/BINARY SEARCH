@@ -1,0 +1,66 @@
+problemas com binary search standard:
+	https://codeforces.com/edu/course/2/lesson/6/1
+	- ex: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C
+	- ex: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/B
+	- ex: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/D
+	- ex: https://codeforces.com/contest/1111/problem/C, normal divide and conquer with binary search on thw positions
+	- ex: https://codeforces.com/contest/386/problem/B
+	- ex: https://codeforces.com/contest/1408/problem/C, find intersection point first, binary search in flags before and after intersection point (knowing velocity and arrival time)
+	- ex: https://codeforces.com/contest/847/problem/B, for each i find the bucket with largest last element smaller than a[i]
+	- ex: https://codeforces.com/contest/1436/problem/C
+	- ex: https://codeforces.com/contest/925/problem/A
+	- ex: https://codeforces.com/contest/62/problem/B
+	- ex: https://codeforces.com/contest/1177/problem/B
+	- ex: https://codeforces.com/contest/1472/problem/E, build array sorted by (w,h) - mantaining minimal prefix h, then for each (h,w) search w1 < h and w1 < w and see if minimal prefix is less than (w,h) respectivily 
+	- ex: https://codeforces.com/contest/1480/problem/C, ask for pairs of positions (i,j) if i<j restrain searching to l,j else restringe to i,r
+	- ex: https://codeforces.com/contest/1486/problem/C1, (l, mid, r) find second greatest in (l,r) then restrain to (l,mid) or (mid,r) by asking for the second greatest in these ranges. 
+	- ex: https://codeforces.com/contest/1486/problem/C2, first find the second max, then see if the greatest is to the left or right. if its to the right, binary search on (secondmax, n) with query=(secondmax,mid) to find the greatest index such that a query results in secondmax.
+	- ex: https://codeforces.com/contest/1490/problem/G, first find the min number of times it goes by all array, then find the min index such that the total sum is greater than x (to use binary search as 00111 save the max element from 0..i for each i).
+	
+	
+problemas binary search pra uma resposta:
+	https://codeforces.com/edu/course/2/lesson/6/2
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/A
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/B
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/C
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/D
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/F
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/G
+	- ex: https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/H
+	- ex: http://codeforces.com/contest/812/problem/C, calculate values for fixed k and sort, get k smallest value and compare with budget
+	- ex: https://codeforces.com/blog/entry/74714, rewrite as (ai - bj) > (bi - aj) or ai-bi + aj-bj > 0, binary search either of them (the first must be divided by 2)
+	- ex: https://codeforces.com/contest/825/problem/D, binary search on number of occurrences
+	- ex: https://codeforces.com/contest/371/problem/C
+	- ex: https://codeforces.com/contest/1250/problem/J, binary search on soldiers by row, go all the array considering a[i] + a[i+1] for every i, take most possible from a[i]
+	- ex: https://codeforces.com/contest/1250/problem/L
+	- ex: https://codeforces.com/contest/732/problem/D, binary search on days, for each day see if last appeareance of test i is greater than number of days to prepare for it for all i and if (number of days - tests) is >= than sum of preparation needed
+	- ex: https://codeforces.com/contest/68/problem/B, binary search on maximum energy, the sum of (a[i]-x)*k must be >= x-a[i] for a[i] > x and a[i] < x respectivly
+	- ex: https://codeforces.com/contest/958/problem/F2, s = sum(a[i]), binary search on (l=s,r=n) minimal interval range to fufill all values of a[i], answer is (r - s)
+	- ex: https://codeforces.com/contest/51/problem/C, for each power d find maximum number of houses each station can cover: a[r] - a[l] <= 2*d, print them greedily: a[0] + ans, a[l1] + ans (a[l1] > a[0] + 2*ans), a[l2] + ans (a[l2] > a[l1] + 2*ans)
+	- ex: https://codeforces.com/contest/325/problem/B
+	- ex: https://codeforces.com/contest/448/problem/D, binary search on the kth smallest element, each try go through all lines and sum elements smaller than mid.
+	- ex: https://codeforces.com/contest/1486/problem/D, binary search for greatest median, each try transform elements in (-1, 1 if > or < than x) and find the greatest subset sum of lenght at least k, if sum > 0 then its valid.
+	
+
+problemas com minimax:
+	https://codeforces.com/edu/course/2/lesson/6/3
+	- ex: https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/A
+	- ex: https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/B
+	- ex: https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/C
+	- ex: http://codeforces.com/contest/1370/problem/D - binary search no custo minimo, a cada iteração ver se é possivel pegar uma subsquencia onde ou todos os elementos em posições impares são menores que esse minimo (pares não importam) ou todos os elementos em posições pares são menores (impares não importam).
+	
+
+
+problema com ternary search:
+	https://cp-algorithms.com/num_methods/ternary_search.html
+	- ex: https://codeforces.com/contest/1301/problem/B, ternary search on the value
+	
+	
+	
+	
+https://codeforces.com/edu/course/2/lesson/6/4
+https://codeforces.com/edu/course/2/lesson/6/5
+
+
+

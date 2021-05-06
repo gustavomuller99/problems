@@ -1,0 +1,85 @@
+https://oeis.org/
+https://www.geeksforgeeks.org/number-theory-competitive-programming/
+
+problemas com matematica:
+	https://cp-algorithms.com/num_methods/roots_newton.html
+	- ex: http://codeforces.com/contest/1366/problem/A, a - 2x = b - x para igualar, depois binary search em multiplos de 3
+	- ex: http://codeforces.com/contest/1266/problem/A, 2^2*3*5
+	- ex: http://codeforces.com/contest/1352/problem/C, binary search through the "blocks"
+	- ex: https://codeforces.com/contest/1373/problem/C
+	- ex: https://codeforces.com/contest/1385/problem/A
+	- ex: https://codeforces.com/contest/1364/problem/A
+	- ex: https://codeforces.com/contest/520/problem/B
+	- ex: https://codeforces.com/contest/1371/problem/B
+	- ex: https://codeforces.com/contest/732/problem/C
+	- ex: https://codeforces.com/contest/439/problem/C, only the number of odds matter, any even number is composed by even amounts of odds, any odd number is composed by odd amounts of odds
+	- ex: https://codeforces.com/contest/1091/problem/D, algo to find the next permutation: find k so that a[k..n] is decreasing, swap a[k-1] with smallest element larger than a[k-1] in a[k..n], sort a[k..n]. 1. all normal permutations have the correct sum. 2. a permutation composed by two permutations a[k..n] and b[0..n-k] have the correct sum only if a[0..n-k] == b[0..n-k], which happens only if a[k..n] is not decreasing. the number of permutation with decreasing ending for a fixed suffix of length k is 
+	- ex: https://codeforces.com/contest/1089/problem/G
+	- ex: https://codeforces.com/contest/49/problem/B
+	- ex: https://codeforces.com/contest/1450/problem/C1, divide all cells in 3 groups (i+j)%3, rx = number of tokens in remainder x  then r0 + r1 + r2 = k, min(r0, r1, r2) <= k/3 choose the remainder with minimal tokens and invert all tokens
+	- ex: https://codeforces.com/contest/1450/problem/C2, divide all cells in 3 groups (i+j)%3, but now we also divide in X and O, so r0X + r0O + r1X + r1O + r2X + r2O = k. we should pick both rxX and ryO such that x != y (so we change two every three consecutive cells) and rxX + rxO is minimal (so its <= 2k/3) 
+	- ex: https://codeforces.com/contest/1379/problem/B, go through all possible a and see if m%a <= r-l (positive) == b-c or (m+a)%a <= l-r (negative) == b-c
+	- ex: https://codeforces.com/contest/83/problem/B, divide in "blocks" of all the people who can still go, subtract the smallest a[i] ((a[i]-a[i]_prev)*people_remaining, people_remaining -= amount(a[i] in n)) each time to quickly reach the "block" before the block in which is at. then subtract all the elements before k in his block (a[i] = a[i] - k/people_remaining - (i < k%people_remaining)) and then complete a cycle in the array starting at k%people_remaining
+	- ex: https://codeforces.com/contest/1469/problem/D, starting at n, go until sqrt(n) dividing n-1,n-2 by n then divide n by sqrt(n) two times
+	- ex: https://codeforces.com/contest/1478/problem/B
+	- ex: https://codeforces.com/contest/1478/problem/C, all numbers should be even and for each pair (a < b, (a -a b -b) the sum is exactly 4*b) so we just need to verfify starting by the largest number (also each number must appear twice)
+	- ex: https://codeforces.com/contest/1485/problem/C, a/b = a%b = k, (k*b + k = a < x) for a fixed k < sqrt(x), find all b such that (b > k), (b <= y) and (k*b + k < x, b < x/k - 1) 
+	- ex: https://codeforces.com/contest/900/problem/B, execute division step by step, as each step we find the remaing of a/b we only need to check length of b for period (pigeonhole) 
+	- ex: https://codeforces.com/contest/1355/problem/D, if 2*n <= s there is a answer of the type 2,2,2...,2,s-(n-1)*2 - the element you cant find is 1 or s-1, if 2*n > s its impossible
+	- ex: http://codeforces.com/contest/1487/problem/B
+	- ex: http://codeforces.com/contest/1487/problem/D, join two equations to find c = f(b) and then a = f(b) --> get to the conclusion that a exists for every odd number
+	- ex: https://codeforces.com/contest/534/problem/B
+
+
+problemas com GCD/LCM:
+	https://cp-algorithms.com/algebra/euclid-algorithm.html
+	https://cp-algorithms.com/algebra/extended-euclid-algorithm.html
+	- ex: https://www.geeksforgeeks.org/program-to-find-lcm-of-two-numbers/
+	- ex: https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
+	- ex: https://codeforces.com/contest/1245/problem/A, ax + by
+	- ex: https://codeforces.com/contest/1370/problem/B
+	- ex: https://codeforces.com/contest/633/problem/A
+	- ex: https://codeforces.com/contest/1485/problem/D, lcm of (1,2..15,16) is 720720
+	
+
+problemas com fatores:
+	https://cp-algorithms.com/algebra/factorization.html
+	- ex: https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
+	- ex: https://codeforces.com/contest/1372/problem/B
+	- ex: https://codeforces.com/contest/1454/problem/D
+	
+	
+problemas com primos:
+	https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html
+	https://cp-algorithms.com/algebra/primality_tests.html
+	- ex: http://codeforces.com/contest/1360/problem/D, check all divisor up to sqrt(x), n/x and n/(n/x)
+	- ex: http://codeforces.com/contest/1370/problem/C casos: 1, odd, 2^n, 2^n.(fatores impares) para n > 1, 2p com p primo, 2p com p par  
+	- ex: https://codeforces.com/contest/17/problem/A
+	- ex: https://codeforces.com/contest/576/problem/A, all x^y for x prime and x^y <= n
+	- ex: https://codeforces.com/contest/1474/problem/B
+
+
+problemas com aritmetica modular:
+	https://cp-algorithms.com/algebra/module-inverse.html
+	https://cp-algorithms.com/algebra/linear_congruence_equation.html
+	https://cp-algorithms.com/algebra/chinese-remainder-theorem.html
+	https://cp-algorithms.com/algebra/factorial-modulo.html
+	https://cp-algorithms.com/algebra/discrete-log.html
+	https://cp-algorithms.com/algebra/primitive-root.html
+	https://cp-algorithms.com/algebra/discrete-root.html
+	https://cp-algorithms.com/algebra/montgomery_multiplication.html
+	- ex: 
+	
+	
+https://cp-algorithms.com/algebra/all-submasks.html
+https://cp-algorithms.com/algebra/big-integer.html
+https://cp-algorithms.com/algebra/fft.html
+https://cp-algorithms.com/algebra/polynomial.html
+https://cp-algorithms.com/algebra/linear-diophantine-equation.html
+https://cp-algorithms.com/algebra/binary-exp.html
+https://cp-algorithms.com/algebra/phi-function.html
+https://cp-algorithms.com/algebra/divisors.html
+	
+	
+
+

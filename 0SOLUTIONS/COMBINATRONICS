@@ -1,0 +1,21 @@
+problemas do tipo "number of ways to do smth":
+	- ex: http://codeforces.com/contest/1355/problem/B, borders =  4 * 2 * 3 * (4 ^ (spaces to fill - 1)), middle = 4 * (positions to group - 2) * 3^2 * 4^(spaces to fill - 2)
+	- ex: https://codeforces.com/contest/1391/problem/C, must be of type /\ increasing then decreasing
+	
+	
+problemas com combinações:
+	- ex: https://www.geeksforgeeks.org/binomial-coefficient-dp-9/
+	- ex: https://codeforces.com/contest/1475/problem/E, precompute
+	
+	
+problemas com sequencias:
+	- ex: https://www.geeksforgeeks.org/program-nth-catalan-number/	
+	
+	
+https://cp-algorithms.com/combinatorics/inclusion-exclusion.html
+https://cp-algorithms.com/combinatorics/burnside.html
+https://cp-algorithms.com/combinatorics/stars_and_bars.html
+https://cp-algorithms.com/combinatorics/generating_combinations.html
+https://cp-algorithms.com/combinatorics/bishops-on-chessboard.html
+https://cp-algorithms.com/combinatorics/bracket_sequences.html
+https://cp-algorithms.com/combinatorics/counting_labeled_graphs.html

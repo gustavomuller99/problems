@@ -1,0 +1,175 @@
+problemas com dfs/bfs:
+	https://cp-algorithms.com/graph/breadth-first-search.html
+	https://cp-algorithms.com/graph/depth-first-search.html
+	- ex: http://codeforces.com/contest/1130/problem/C, força bruta
+	- ex: https://codeforces.com/contest/843/problem/A, ou dsu
+	- ex: https://codeforces.com/contest/190/problem/C
+	- ex: https://codeforces.com/contest/796/problem/D
+	- ex: https://codeforces.com/contest/689/problem/B
+	- ex: https://codeforces.com/contest/1303/problem/C
+	- ex: https://codeforces.com/contest/320/problem/B
+	- ex: https://codeforces.com/contest/986/problem/A, bfs on all k (multiple starting points) each town save shortest path to bring i to it 
+	- ex: https://codeforces.com/contest/59/problem/E, no edge needs to be transversed more than 2 times
+	- ex: https://codeforces.com/contest/821/problem/D, use set to save pairs of vertexes and for each lit go through all other lit ones and if its difference of rows and colums is <= 2 you need one coin
+	- ex: https://codeforces.com/contest/1067/problem/B, start from leaves and meet conditions: only one center (all visited), inner vertex must have deleted >= 3, number of inner >= minimal number of needed vertex to form hedgehog
+	
+	
+problemas com ciclos:
+	https://cp-algorithms.com/graph/finding-cycle.html
+	https://cp-algorithms.com/graph/finding-negative-cycle-in-graph.html
+	https://cp-algorithms.com/graph/euler_path.html
+	- ex: http://codeforces.com/contest/977/problem/E, todos os vertices devem ser de grau 2.
+	- ex: https://codeforces.com/contest/131/problem/D
+	- ex: https://codeforces.com/contest/263/problem/D, since every vertex has exactly k neighbours, we can stop once we find a vertex with all neighbours visited (it will be at least k+1)
+	- ex: http://codeforces.com/contest/1476/problem/C
+	
+
+problemas com arvores - standard:
+	https://www.geeksforgeeks.org/binary-tree-data-structure/
+	- ex: http://codeforces.com/contest/1336/problem/A, sort by value (depth-subtree_size), sum first k highest
+	- ex: https://codeforces.com/contest/1143/problem/C
+	- ex: https://codeforces.com/contest/1098/problem/A, -1 nodes get min of its children
+	- ex: https://codeforces.com/contest/1106/problem/D
+	- ex: https://codeforces.com/contest/690/problem/C1
+	- ex: https://codeforces.com/contest/350/problem/B
+	- ex: https://codeforces.com/contest/120/problem/F
+	- ex: https://codeforces.com/gym/102694/problem/A
+	- ex: https://codeforces.com/gym/102694/problem/B
+	- ex: https://codeforces.com/contest/979/problem/C, cant produce an incorrect one with less than 6 edges 
+	- ex: https://codeforces.com/contest/643/problem/B
+	- ex: https://codeforces.com/contest/1188/problem/A1, no vertex can have degree 2
+	- ex: https://codeforces.com/contest/839/problem/C, sum(length*prob)
+	- ex: https://codeforces.com/contest/930/problem/A, sum(depth[i]%2) depth[i] = number of vertexes with depth i
+	- ex: https://codeforces.com/contest/982/problem/C, count sz[i] = number of nodes in i's subtree, if sz[adj] % 2 == 0 and (sz[i] - sz[adj]) % 2 == 0 recur
+	- ex: https://codeforces.com/contest/696/problem/B, expected_distace[parent] + 1 + 1/2(sum subtree sizes of parent - this subtree size)
+	- ex: https://codeforces.com/contest/700/problem/B, count sz[x] = number of universities in subtree of x. then for each edge (parent-x) we want the maximal number of sz[x] passing through this edge. max = min(sz[x],all-s[x])
+	- ex: https://codeforces.com/contest/1466/problem/D, every i sum vertex with hihgest value and degree at least 2.
+	- ex: https://codeforces.com/problemset/problem/110/E
+	- ex: https://codeforces.com/contest/237/problem/D
+	- ex: https://codeforces.com/contest/1406/problem/C
+	
+	
+problemas com binary lifting / lca:
+	https://cp-algorithms.com/graph/lca.html
+	https://cp-algorithms.com/graph/lca_binary_lifting.html
+	https://cp-algorithms.com/graph/lca_farachcoltonbender.html
+	https://cp-algorithms.com/graph/rmq_linear.html
+	https://cp-algorithms.com/graph/lca_tarjan.html
+	- ex: https://codeforces.com/gym/102694/problem/C
+	- ex: https://codeforces.com/contest/690/problem/C3
+	- ex: https://codeforces.com/gym/102694/problem/D
+	
+	
+problemas com 'tree flattening':
+	https://www.youtube.com/watch?v=MOy4UDjN8DM
+	https://www.geeksforgeeks.org/euler-tour-tree/
+	- ex: https://codeforces.com/gym/102694/problem/E
+	- ex: https://codeforces.com/gym/102694/problem/F
+
+			
+problemas com mst:
+	https://cp-algorithms.com/graph/mst_prim.html
+	https://cp-algorithms.com/graph/mst_kruskal.html
+	https://cp-algorithms.com/graph/mst_kruskal_with_dsu.html
+	https://cp-algorithms.com/graph/second_best_mst.html
+	https://cp-algorithms.com/graph/kirchhoff-theorem.html
+	https://cp-algorithms.com/graph/pruefer_code.html
+	kruskal (dsu) é preferível em relação a prim pq kruskal pega as arestas em ordem crescente, oq pode ser util as vezes.
+	problemas:
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/E
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/G
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/H
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/F
+	- ex: https://codeforces.com/contest/472/problem/D
+	- ex: https://codeforces.com/contest/436/problem/C, build graph with undirected edges with values equal to d[x][y] = cost to transfer y after x, print all the edges in the mst
+	- ex: https://codeforces.com/contest/1081/problem/D, in mst the highest edge value is as low as possible, stop when all k vertexes are in the mst (the last edge will be the highest, thus the answer, because if there was any other path with less maximal it would be on the tree)
+	- ex: https://codeforces.com/contest/437/problem/D
+	- ex: https://codeforces.com/contest/1184/problem/E2, binary lifting on each not used edge
+	- ex: https://codeforces.com/contest/1184/problem/E1, run kruskal not counting the edge requested, when both vertexes become connected that edge is the answer, could be solved with binary search
+	- ex: http://codeforces.com/contest/609/problem/E, find second best mst
+	- ex: https://codeforces.com/contest/1095/problem/F, for each vertex, one value is fixed but the other one will be the min vertex value.
+
+
+problemas com connected components:
+	https://cp-algorithms.com/graph/search-for-connected-components.html
+	- ex: https://codeforces.com/contest/217/problem/A
+	- ex: https://codeforces.com/contest/103/problem/B, if its connected and n = m
+	- ex: https://codeforces.com/contest/150/problem/B
+	- ex: https://codeforces.com/contest/731/problem/C
+	- ex: https://codeforces.com/contest/1213/problem/G, starting from the lowest query qi, add all edges <= qi and keep connected component size with dsu, we can recompute answer at each join in O(1)
+	- ex: https://codeforces.com/problemset/problem/292/D, prefix[m][n] = state of the dsu after first m edges being added, suffix[m][n] state of the dsu after the last m edges being added, answer for each query is union of prefix[l-1] and suffix[r], d[j] = prefix[l-1], d[g(j, d)] = g(s[r][j], d) - union of two sets of disjoint sets (if u and v are on the same set in either one of the disjoint sets, they will be together in the final result), this problem could be solved using prefix[i] = number of connected components whit i edged if there werent multiple edges 
+	- ex: https://codeforces.com/contest/1250/problem/N
+	- ex: https://codeforces.com/contest/771/problem/A
+	
+problemas com grafos - standard:
+	https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+	- ex: https://codeforces.com/contest/1065/problem/B
+	- ex: https://codeforces.com/contest/901/problem/A
+	- ex: https://codeforces.com/contest/232/problem/A, d[i] = number of cycles of 3 with i vertexes, d[i] = d[i-1] + C(n-1, 2), connect all and erase some after (thinking of edegs). do binary search on C(mid, 3) connecting all so that C(l,3) < k (thinking of vertexes) and then C(mid, 2) to complete until k
+	- ex: https://codeforces.com/contest/827/problem/B
+	- ex: http://codeforces.com/contest/1476/problem/D
+	
+
+problemas com topological sort:
+	- ex: https://codeforces.com/contest/645/problem/D, toposort needs to be n-1 long (so every robot has a superior), use dp to find longest path and biggest edge index
+	- ex: http://codeforces.com/contest/1476/problem/E
+
+	
+problemas com eulerian paths:
+	- ex: https://codeforces.com/contest/267/problem/B, nodes from (0..6), edges are dominoes, visit each edge once.
+
+	
+problemas com pontes:
+	https://cp-algorithms.com/graph/bridge-searching.html
+	https://cp-algorithms.com/graph/bridge-searching-online.html
+	https://cp-algorithms.com/graph/cutpoints.html
+	- ex: https://codeforces.com/blog/entry/47890, bridges + maximum component + orientation
+	
+	
+problemas com shortest paths:
+	https://www.geeksforgeeks.org/shortest-path-faster-algorithm/
+	https://cp-algorithms.com/graph/dijkstra.html
+	https://cp-algorithms.com/graph/dijkstra_sparse.html
+	https://cp-algorithms.com/graph/bellman_ford.html
+	https://cp-algorithms.com/graph/01_bfs.html
+	https://cp-algorithms.com/graph/all-pair-shortest-path-floyd-warshall.html
+	https://cp-algorithms.com/graph/desopo_pape.html
+	https://cp-algorithms.com/graph/fixed_length_paths.html
+	- ex: https://codeforces.com/problemset/problem/187/B, f-m on 0 changes of car, i change = i-1 change + 0 change
+	- ex: https://codeforces.com/contest/1486/problem/E, add intermediate vertices, for example: vertices (1 -(w=4) 2 -(w=5) 3) add edge from 1 to virtual vertice (w=4,v=2) of weight zero, then for each virtual edge (all weights, max 50) add edge from (w=4,v=2) to 3 with weight = 4*4 + 5*5, then run djikstra
+	- ex: https://codeforces.com/gym/317667/problem/G, using the fact that shortest path u->w->v is shortest for u->w and w->v create a virtual node and connect each node n to it with weight of a[n]
+	
+	
+problemas com max flow:
+	https://cp-algorithms.com/graph/edmonds_karp.html
+	https://cp-algorithms.com/graph/push-relabel.html
+	https://cp-algorithms.com/graph/push-relabel-faster.html
+	https://cp-algorithms.com/graph/dinic.html
+	https://cp-algorithms.com/graph/mpm.html
+	https://cp-algorithms.com/graph/flow_with_demands.html
+	https://cp-algorithms.com/graph/min_cost_flow.html
+	https://cp-algorithms.com/graph/Assignment-problem-min-flow.html
+	- ex: https://codeforces.com/contest/498/problem/C, standard bipartite matching (i and j have different parity), for each pair (i,j) match the factors of a[i] with the = factors of a[j]
+	- ex: https://codeforces.com/contest/863/problem/F, first for each postition find its limits (l,r) then create flow from position to value, each value can be picked n times and the weights are (1,3,5.. so that 1+3+5=9=3^2), run mincost
+	- ex: https://codeforces.com/contest/237/problem/E, build flow from strings to pick (with cap equal to number of chars) to needed characters, run mincost
+	- ex: https://codeforces.com/problemset/problem/1214/D, answer can be 0,1 or 2. can be solved with flow, all elements have cap=1. each iteration finds a path to the sink and "closes" it. maxflow will be the answer. if all capacities are 1, maxflow solves the problem "number of completely disjoint paths to sink".
+	- ex: https://codeforces.com/contest/965/problem/D, using max flow min cut theorem, we can see that the answer is min(sum(i,i+l) for every i) (every jump from 0..i-1 to i+1..n must go through i..i+l, so its a bottleneck).
+	- ex: https://codeforces.com/contest/546/problem/E, standard two layer maxflow, if (u,v E edges) then create edge from u (1st layer) to v (2nd layer) and vice versa. from source to 1st layer use cap=a[i], from 2nd layer to sink use cap=b[i], maxflow must be equal to sum(b[i]) - answer lies on the flows pushed from 1st to 2nd layer  
+	- ex: https://codeforces.com/contest/321/problem/B, RESOLVE ESSA MERDA 
+	
+	
+	
+problemas com matchings:
+	https://cp-algorithms.com/graph/bipartite-check.html
+	https://cp-algorithms.com/graph/kuhn_maximum_bipartite_matching.html
+	
+	
+	
+	
+https://cp-algorithms.com/graph/edge_vertex_connectivity.html
+https://cp-algorithms.com/graph/tree_painting.html
+https://cp-algorithms.com/graph/2SAT.html
+https://cp-algorithms.com/graph/hld.html
+	
+
+                 

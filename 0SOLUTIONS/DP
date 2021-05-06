@@ -1,0 +1,310 @@
+método bottom up para achar o número n de uma sequencia:
+	https://cp-algorithms.com/algebra/fibonacci-numbers.html
+	https://cp-algorithms.com/combinatorics/binomial-coefficients.html
+	https://cp-algorithms.com/combinatorics/catalan-numbers.html
+	- ex: bell numbers: número de maneiras de dividir n elementos, https://www.geeksforgeeks.org/count-number-of-ways-to-partition-a-set-into-k-subsets/
+	- ex: binomial: combinação. calcular numa tablea n*m previamente e acessar valores depois. C(n,k) = C(n-1,k) + C(n-1,k-1) - C(n,0) = 1
+	- ex: permutação: grupo de n permutação de k. n!/(n-k)! -> P(n,k) = P(n-1,k) + k*P(n-1,k-1)
+	- ex: https://www.geeksforgeeks.org/ugly-numbers/, d[i] = min(n2,n3,n5), nx = x*d[ix]
+	- ex: https://www.geeksforgeeks.org/entringer-number/ (interessante)
+	- ex: https://www.geeksforgeeks.org/rencontres-number-counting-partial-derangements/ (also interessante)
+	- ex: https://www.geeksforgeeks.org/count-derangements-permutation-such-that-no-element-appears-in-its-original-position/
+	- ex: https://www.geeksforgeeks.org/non-crossing-lines-connect-points-circle/, catalan numbers, d[i/2] = soma(d[k/2] + d[i/2-k/2-1], k par de 0 até i-2)
+	- ex: https://codeforces.com/contest/735/problem/C, fibonnaci where f[x] means there are x players
+	- ex: https://codeforces.com/contest/888/problem/D, recontres number
+
+
+
+problemas que podem ser reduzidos a uma fórmula recursiva:
+	https://cp-algorithms.com/dynamic_programming/divide-and-conquer-dp.html
+	https://cp-algorithms.com/dynamic_programming/profile-dynamics.html
+	- ex: tiling problem, pode ser reduzido a forma F(n) = F(n-1) + F(n-2) - https://www.geeksforgeeks.org/tiling-problem/
+	- ex: friends pairing problem, https://www.geeksforgeeks.org/friends-pairing-problem/
+	- ex: tiling with dominoes, https://www.geeksforgeeks.org/tiling-with-dominoes/
+	- ex: https://www.geeksforgeeks.org/painting-fence-algorithm/
+	- ex: https://www.geeksforgeeks.org/maximum-games-played-winner/, numero de jogadores para que o vencedor jogue x jogos. F(i+1) = F(i) + F(i-1)
+	- ex: https://practice.geeksforgeeks.org/problems/bbt-counter4914/1, F(i) = F(i-1)^2 + 2*F(i-1)*F(i-2)
+	- ex: https://www.geeksforgeeks.org/counting-pairs-person-can-form-pair-one/, F(i) = F(i-2)*(i-1) + F(i-1)
+	- ex: https://www.geeksforgeeks.org/number-n-digits-non-decreasing-integers/, d[i][j] = d[i-1][j] + d[i][j-1], (i,j) representa numero de tamanho i considerando valores até j. d[i][j-1] passa para frente as possibilidades de mesmo tamanho e d[i-1][j] adiciona número j na frente das possibilidades de -1 tamanho.
+	- ex: https://www.geeksforgeeks.org/counting-numbers-n-digits-monotone/, https://www.geeksforgeeks.org/number-decimal-numbers-length-k-strict-monotone/
+	- ex: https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/, d[i][j] = min(max(d[i-1][x-1], d[i][j-x] para todos x <= j) + 1), o max é pq a resposta é para o pior caso.
+	- ex: https://www.geeksforgeeks.org/dice-throw-dp-30/ d[i][j] = soma(d[i-1][j-x] para x = 1, < j e x <= m) d[0][j] = 1 para j = 1 até k
+	- ex: https://www.geeksforgeeks.org/tile-stacking-problem/ d[i][0] = 1 d[0][i] = 1 se 0 <= i <= k, d[i][j] = soma(d[i-1][j-x] para x = 0, x <= k) (ser maior ou menor não importa)
+	- ex: https://www.geeksforgeeks.org/print-equal-sum-sets-array-partition-problem-set-2/, d[i][j] = d[i-1][j] || d[i][j-a[i]], pra printar usar backtracking na matriz
+	- ex: https://www.geeksforgeeks.org/count-of-n-digit-numbers-whose-sum-of-digits-equals-to-given-sum/, d[n][sum], d[i][j] = soma(d[i-1][j-x] para x de 1 a 9)
+	- ex: https://www.geeksforgeeks.org/count-total-number-of-n-digit-numbers-such-that-the-difference-between-the-sum-of-even-digits-and-odd-digits-is-1/
+	- ex: https://www.geeksforgeeks.org/find-maximum-dot-product-two-arrays-insertion-0s/, d[i][j] = max(d[i-1][j-1] + A[i] * B[j], d[i][j-1])
+	- ex: https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/, d[4][n], d[i][j] = max(d[i][j-1], d[i-1][j-1] + (i impar) ou - (i par) a[j]) d[n] preencher de (n até 1) d[i] = max(d[i+1], max_num - a[i]) e de (1 até n) d[i] = max(d[i-1], d[i] + a[i] - min_num)  
+	- ex: https://www.geeksforgeeks.org/maximum-number-of-trailing-zeros-in-the-product-of-the-subsets-of-size-k/	
+	- ex: https://www.geeksforgeeks.org/paper-cut-minimum-number-squares-set-2/, d[i][i] = 1, d[i][j] = 1 + (i < j ? d[i][j-i] : d[i-j][j]) 
+	- ex: https://www.geeksforgeeks.org/find-minimum-adjustment-cost-of-an-array/, (i,j) transformar a[i] em j, d[i][j] = |a[i] - j| + min(d[i-1][k], k E [|j-k| <= target])
+	- ex: https://www.geeksforgeeks.org/given-large-number-check-subsequence-digits-divisible-8/, https://www.geeksforgeeks.org/number-substrings-divisible-8-not-3/ usar a propriedade q % x == ((q[0..n-1] % x) * 10 + q[n]) % x, manter um segundo valor para os divisiveis por 3, subtrair no final
+	- ex: https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/
+	- ex: https://www.geeksforgeeks.org/number-of-permutation-with-k-inversions/
+	- ex: https://www.geeksforgeeks.org/balanced-expressions-such-that-given-positions-have-opening-brackets/, (i,j) indica primeiras i posições com n([) - n(]) == j d[i][j] = d[i-1][j-1] se precisa ser [, se não + d[i-1][j+1]
+	- ex: https://www.geeksforgeeks.org/mobile-numeric-keypad-problem/, (i,j) tamanho i terminado em número j, (i,j) = soma dos terminados anteriormente que podem se mover para j
+	- ex: https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
+	- ex: https://www.geeksforgeeks.org/find-minimum-possible-size-of-array-with-given-rules-for-removal/, (i,j) arr[i..j] pode ser removido completamente, rodar para multiplos de 3 para cada intervalo de tamanho x testar se algum subarray de tamanho x-3 pode ser deletado e os restantes elementos seguem a regra. 
+	- ex: https://www.geeksforgeeks.org/count-arrays-adjacent-elements-one-divide-another/
+	- ex: https://www.geeksforgeeks.org/find-combinations-k-bit-numbers-n-bits-set-1-n-k-sorted-order/
+	- ex: https://codeforces.com/contest/416/problem/B
+	- ex: https://codeforces.com/contest/1245/problem/C
+	- ex: https://codeforces.com/contest/756/problem/B, save t2 and t3 minimal indices such that a[i] <= a[t1] + 90 and a[i] <= a[t2] + 1440 charge[i] = min(charge[i-1] + 20, charge[t1] + 50, charge[t2] + 120)
+	- ex: https://codeforces.com/contest/597/problem/B, save t1 minimal index such that a[t1].second < a[i].first, d[i] = max(1, d[t1] + 1), or sort by ending time and pick greedily
+	- ex: https://codeforces.com/contest/209/problem/A, d(2), d[0][0] = 1, d[1][0] = 0, d[0][i par] = d[1][i impar] = d[1][i-1] + d[0][i-1] + 1, d[0][i impar] = d[0][i-1], d[1][i par] = d[1][i-1], ans = d[1][n] + d[0][n]
+	- ex: https://codeforces.com/contest/598/problem/E, dp[x][y][k] = cost to get k blocks from x*y bar, d[x][y][k] = min(x*x + d[x][y-i][k-j] + d[x][i][j] for i=(1..y/2) and j=(0..k)) same for y*y, if k==0 or x*y==k cost is zero
+	- ex: https://codeforces.com/problemset/problem/182/E, dp[i][j][k] k = (0,1) -> length i ending at board j unturned (k=0, height = a[j].second) or turned (k=1, height = a[j].first)
+	- ex: https://codeforces.com/contest/39/problem/E, state (i,j) = i^j, se i == 1 para um j tal que 2^j > n empata, para j = 1 e i tal que i*i >= n ganha dependendo da distancia até n. para um (i,j) tal que i^j >= n ganha dependendo da paridade de i+j, para i+j < n chama para baixo e para cima e checa paridade
+	- ex: https://codeforces.com/contest/119/problem/C
+	- ex: https://codeforces.com/contest/1437/problem/C
+
+
+
+problemas em uma matriz onde a movimentação é limitada (a matriz pode ser compreendida como um dag)
+e algo deve ser otimizado. Nesse tipo de problema usar algoritmos de grafos:
+	- ex: gold mine problem, https://www.geeksforgeeks.org/gold-mine-problem/
+	- ex: power problem, https://www.geeksforgeeks.org/game-theory-choice-area/
+	- ex: assembly line scheduling, https://www.geeksforgeeks.org/assembly-line-scheduling-dp-34/
+	- ex: max snake sequence, https://www.geeksforgeeks.org/find-maximum-length-snake-sequence/
+	- ex: https://www.geeksforgeeks.org/path-maximum-average-value/
+	- ex: https://www.geeksforgeeks.org/maximum-path-sum-triangle/
+	- ex: https://www.geeksforgeeks.org/min-cost-path-dp-6/
+	- ex: https://www.geeksforgeeks.org/dynamic-programming-high-effort-vs-low-effort-tasks-problem/, d[i][3], d[i][0] = max(d[i-1][x]) d[i][1] = max(d[i-1][x] + l[i]) d[i][2] = d[i-1][0] + h[x]
+	- ex: https://www.geeksforgeeks.org/number-of-paths-with-exactly-k-coins/, d[i][j][k] no final checar o valor de d[n][m][k],  d[i][j] = d[i-1][j][k-a[i][j]] + d[i][j-1][k-a[i][j]]
+ 	- ex: https://www.geeksforgeeks.org/collect-maximum-coins-before-hitting-a-dead-end/, se i é par d[i][j] = max(d[i-1][j] + 1, d[i][j-1]), caso contrario d[i][j] = max(d[i-1][j], d[i][j+1])
+ 	- ex: https://www.geeksforgeeks.org/minimum-sum-path-3-d-array/
+ 	- ex: https://www.geeksforgeeks.org/maximum-decimal-value-path-in-a-binary-matrix/
+ 	- ex: https://www.geeksforgeeks.org/minimum-positive-points-to-reach-destination/, algoritmo normal, no final formar o caminho e ans = soma dos valores acumulados negativos
+ 
+ 
+ 
+problemas do tipo knapsack, esses problemas podem ser resolvidos em tempo n*k utilizando espaço k:
+caso os elementos não possam ser repetidos, a cada linha rodar o inverso (ou usar 2 vetores utilizando valores da ultima iteracao)
+	- ex: coin change problem, https://www.geeksforgeeks.org/coin-change-dp-7/ - esse problema pode ser reduzido a C(n,k) = C(n-1,k) + C(n,k-n) e isso pode ser implementado em espaço k
+	- ex: subset sum, https://www.geeksforgeeks.org/subset-sum-problem-dp-25/ (rodar inverso), sum of all subsets: 2^(n-1)(a1 + a2 + a3 ... + an) because either element can be or not be in a subset
+	- ex: two subsets with same sum, https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1 (rodar inverso)
+	- ex: subset sum divisible by m, https://www.geeksforgeeks.org/subset-sum-divisible-m/ (rodar inverso)
+	- ex: largest divisible pairs subset: https://www.geeksforgeeks.org/largest-divisible-pairs-subset/
+	- ex: https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1 (rodar inverso)
+	- ex: rod problem, https://www.geeksforgeeks.org/cutting-a-rod-dp-13/ - cada elemento tem um valor que é diferente do valor do elemento.
+	- ex: https://www.geeksforgeeks.org/maximum-number-segments-lengths-b-c/
+	- ex: https://www.geeksforgeeks.org/minimum-cost-to-fill-given-weight-in-a-bag/, true knapsack
+	- ex: https://www.geeksforgeeks.org/find-number-of-solutions-of-a-linear-equation-of-n-variables/, knapsack but its an equation
+	- ex: https://practice.geeksforgeeks.org/problems/ways-to-sum-to-n5759/1
+	- ex: https://www.geeksforgeeks.org/different-ways-sum-n-using-numbers-greater-equal-m/, using true/false values
+	- ex: https://www.geeksforgeeks.org/probability-reaching-point-2-3-steps-time/
+	- ex: https://practice.geeksforgeeks.org/problems/count-number-of-hops-1587115620/1, d(i) = d(i-1) + d(i-2) + d(i-3), se a ordem não importasse basta testar por d(i-x) > 0 : +1
+	- ex: https://www.geeksforgeeks.org/printing-items-01-knapsack/, printando knapsack e mantendo o máximo em cada (i, j)
+	- ex: https://www.geeksforgeeks.org/find-distinct-subset-subsequence-sums-array/, knapsack para soma
+	- ex: https://www.geeksforgeeks.org/count-number-of-subsets-having-a-particular-xor-value/, knapsack com xor
+	- ex: https://www.geeksforgeeks.org/maximum-product-cutting-dp-36/, knapsack normal, os elementos são os "pedaços" possivels de 1 a n-1 -> somar pedaços até n mas salvar a multiplicação
+	- ex: https://www.geeksforgeeks.org/maximum-minimum-values-algebraic-expression/, knapsack para todas somas possiveis, depois achar max e min em d[n][j] --> j*(s-j)
+	- ex: https://www.geeksforgeeks.org/maximize-array-elements-upto-given-number/, considerando cada elemento como positivo e negativo (não deixar o negativo interferir no seu positivo)
+	- ex: https://www.geeksforgeeks.org/find-maximum-sum-array-length-less-equal-m/
+	- ex: https://www.geeksforgeeks.org/ways-to-write-n-as-sum-of-two-or-more-positive-integers/, coin change
+	- ex: https://www.geeksforgeeks.org/sum-average-subsets/, rodar j/d[n][j] no final e achar o maximo
+	- ex: https://www.geeksforgeeks.org/check-people-can-vote-two-machines/
+	- ex: https://www.geeksforgeeks.org/number-subsequences-string-divisible-n/
+	- ex: https://codeforces.com/contest/1381/problem/B, do final, dividir em blocos que vão de [n..i] onde i é o maximo do array, [i-1..j] j é o max de [0..i-1], etc, ver se somam até n
+	- ex: https://codeforces.com/contest/1097/problem/B
+	- ex: https://codeforces.com/contest/316/problem/B1
+	- ex: https://codeforces.com/contest/1061/problem/C, go through all divisor of a[i] -> x, d[x] += d[x-1] d[0]++; 
+	- ex: https://codeforces.com/contest/106/problem/C, elements = {ai/bi (maximum amount), ci, di} for each element run ai/bi, dp[i][j] first i using j grams of dough
+
+
+
+problemas envolvendo combinações:
+	- ex: https://www.geeksforgeeks.org/count-even-length-binary-sequences-with-same-sum-of-first-and-second-half-bits/, calcular tabela C(n,n) e o resultado é a soma de C(x,n)^2 observar solução do problema acima para uma maneira de passar de C(n,x) -> C(n,x+1) em tempo constante
+	- ex: https://www.geeksforgeeks.org/probability-getting-least-k-heads-n-tosses-coins/, soma(C(n, j))  k <= j <= n dividido por 2^n
+
+
+
+problemas com strings:
+	- ex: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/, estado (i,j) indica string A até pos i e string B até pos j, d[i][j] = (A[i] != B[j]) ? max(d[i-1][j], d[i][j-1]) : d[i-1][j-1] + 1 esse problema pode usar espaço 2*min(|A|,|B|)
+	- ex: https://www.geeksforgeeks.org/longest-repeated-subsequence/, condition the indexes must be different.
+	- ex: https://practice.geeksforgeeks.org/problems/lcs-of-three-strings/0, usar matriz 3d.
+	- ex: https://www.geeksforgeeks.org/count-common-subsequence-in-two-strings/
+	- ex: https://www.geeksforgeeks.org/edit-distance-dp-5/, igual lcs (i,j) indica numero de operações pra transformar A[0..i] em B[0..j] d[i][j] = d[i-1][j-1] se A[i] == B[j] se não = min(i-1 j, i j-1, i-1 j-1) + 1 para delete, insert e replace
+	- ex: https://www.geeksforgeeks.org/longest-common-substring-dp-29/, como a string tenq ser continua d[i][j] = d[i-1][j-1] + 1 se iguais ou 0 se diferentes. pode ser resolvido com espaço constante
+	- ex: https://www.geeksforgeeks.org/word-break-problem-dp-32/, inciando na posição 0, marque todos os indices que terminam em prefixos de palavras do dicionario, a partir daí se s[i-1] == 1, teste (j = i j < s.size()) procurando por prefixos e marque as posições finais. 
+	- ex: https://www.geeksforgeeks.org/print-longest-palindromic-subsequence/, LCS com o inverso da string, para printar testar linha a linha se muda d[i][|s|-1] para adicionar a letra ou não.
+	- ex: https://www.geeksforgeeks.org/count-palindromic-subsequence-given-string/, https://www.geeksforgeeks.org/count-palindrome-sub-strings-string/,  contar o numero de LCS
+	- ex: https://www.geeksforgeeks.org/shortest-common-supersequence/, número do LCS + (|s| - LCS para as duas strings)
+	- ex: https://www.geeksforgeeks.org/shortest-uncommon-subsequence/, d[i][j] = 1 se letra não existe na outra string até j, d[i][j] = min(d[i-1][j], d[i-1][k] + 1) k = ultima aparição da letra S[i] na outra string.
+	- ex: https://www.geeksforgeeks.org/count-distinct-subsequences/, d[0] = 1 (empty) d[i] = d[i-1]*2 - d[k-1] onde k é o indice da ultima aparicao da letra s[i];
+	- ex: https://practice.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1, manter uma soma das letras
+	- ex: https://practice.geeksforgeeks.org/problems/distinct-occurrences/1, d[i][j] = d[i][j-1], d[i][j] += d[i-1][j] if a[i] == b[j]
+	- ex: https://www.geeksforgeeks.org/lcs-formed-consecutive-segments-least-length-k/, d[i][j] = 0, d[i][j] = d[i-1][j-1] + 1 se letras iguais, se d[i][j] >= k : ans += d[i][j] - d[i-1][j-1]
+	- ex: https://practice.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1, lcs normal salvo numa tabela, iterar recursivamente na tabela seguindo o menor elemento.
+	- ex: https://www.geeksforgeeks.org/print-longest-common-sub-sequences-lexicographical-order/, mesmo que acima seguindo a menor letra
+	- ex: https://www.geeksforgeeks.org/count-binary-strings-k-times-appearing-adjacent-two-set-bits/, d[n][k][2] (i,j) - tamanho i com j duplas de 1, d[i][j][0] = d[i-1][j][0] + d[i-1][j][1] (adicionar 0 no final da string), d[i][j][1] = d[i-1][j][0] + d[i-1][j-1][1] (adicionar 1 no final da string)
+	- ex: https://www.geeksforgeeks.org/count-strings-can-formed-using-b-c-given-constraints/, d[3][n][2] (tamanho n, 3 c's e 2 b's), d[i][0][0] = 1 para todo i, d[i][j][0] = d[i][j-1][0] (adicionando um a ao final) + d[i-1][j-1][0] (adicinando um c ao final) d[i][j][1] = d[i][j-1][1] (add a) + d[i-1][j-1][1] (add c) + d[i][j-1][0] (add b) -- somar d[i][n][k]
+	- ex: https://www.geeksforgeeks.org/minimum-insertions-to-form-a-palindrome-dp-28/, usar edit distance como no problema abaixo (sem o replace)
+	- ex: https://www.geeksforgeeks.org/minimum-number-deletions-make-string-palindrome/, calcular lcs para achar maior palindromo, ans = n - lcs (ou usar edit distance)
+	- ex: https://www.geeksforgeeks.org/minimum-cost-make-longest-common-subsequence-length-k/, d[i][j][k] = min(cost(i,j) + d[i-1][j-1][k-1], d[i-1][j][k], d[i][j-1][k])
+	- ex: https://www.geeksforgeeks.org/minimum-steps-to-delete-a-string-after-repeated-deletion-of-palindrome-substrings/
+	- ex: https://www.geeksforgeeks.org/find-if-string-is-k-palindrome-or-not/
+	- ex: https://www.geeksforgeeks.org/find-length-longest-subsequence-one-string-substring-another-string/, d[i][j] = max(d[i-1][j], d[i][j-1] + 1 se a[i] == b[j]) 
+	- ex: https://www.geeksforgeeks.org/wildcard-pattern-matching/, https://www.geeksforgeeks.org/dynamic-programming-wildcard-pattern-matching-linear-time-constant-space/ d[n][m], (i,j) a[0..i] match b[0..j] d[i][j] = d[i-1][j] | d[i][j-1] se a[i] == '*', d[i][j] = d[i-1][j-1] se a[i] == b[j] | a[i] == '?', 0 otherwise
+	- ex: https://www.geeksforgeeks.org/ways-transforming-one-string-removing-0-characters/, edit distance
+	- ex: https://www.geeksforgeeks.org/word-wrap-problem-dp-19/, precompute l[i][j] = custo pra colocar palavras i até j em uma linha, c[i] = min(c[j] + L[j][i])
+	- ex: https://www.geeksforgeeks.org/maximum-weight-transformation-of-a-given-string/
+	- ex: https://www.geeksforgeeks.org/count-ways-increase-lcs-length-two-strings-one/
+	- ex: https://www.geeksforgeeks.org/minimum-cost-sort-strings-using-reversal-operations-different-costs/, d[i][0] minimum to sort until i not flipping i, d[i][1] minimum to sort flipping i d[i][0] = min(d[i-1][1], d[i-1][0] se str(i-1) < str(i)), d[i][1] = min(d[i-1][1] + a[i] ...)
+	- ex: https://www.geeksforgeeks.org/find-if-a-string-is-interleaved-of-two-other-strings-dp-33/, (i,j) true se C[0..i+j] é combinação de A[0..i] e B[0..j] d[i][j] = d[i-1][j] se A[i] == C[i+j] || d[i][j-1] se B[j] == C[i+j]
+	- ex: https://www.geeksforgeeks.org/number-subsequences-form-ai-bj-ck/, (a) - seq terminadas em a, d[a][i] = d[a][i-1]*2 + 1, d[b][i] = d[b][i-1]*2 + d[a][i], d[c][i] = d[c][i-1] + d[b][i]
+	- ex: https://www.geeksforgeeks.org/smallest-length-string-with-repeated-replacement-of-two-distinct-adjacent/
+	- ex: https://www.geeksforgeeks.org/number-ways-insert-character-increase-lcs-one/
+	- ex: https://codeforces.com/contest/44/problem/E, start a(k) all with value a and greedily go up to size(string)
+	- ex: https://codeforces.com/contest/191/problem/A, answer in dp[i][i]
+	- ex: https://codeforces.com/contest/1178/problem/B
+	- ex: https://codeforces.com/contest/808/problem/G, number of consecutive occurances using ? as wildcard, or use KMP
+	- ex: https://codeforces.com/contest/73/problem/C, d[i][j][k] = posição i, com j mudanças e letra k, d[i][0][s[i]] = d[i-1][0][s[i-1]] + custo, d[i][1][l] = d[i-1][0][s[i-1]] + custo, d[i][1][s[i]] = max(d[i-1][1][l] + custo para l < 26) d[i][j][s[i]] = max(d[i-1][j][k] + custo para k < 26), d[i][j][k] = max(d[i-1][j-1][l] para k e l < 26) 
+	- ex: https://codeforces.com/contest/44/problem/H, d[i][j] j < 10
+	- ex: https://codeforces.com/problemset/problem/163/A
+
+
+problemas com arrays (alguns aqui são knapsack, fix it):
+	- ex: https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/, d[i] = max(d[i-x] + 1 for a[i-x] < a[i])
+	- ex: https://www.geeksforgeeks.org/dynamic-programming-building-bridges/
+	- ex: https://www.geeksforgeeks.org/maximum-sum-bi-tonic-sub-sequence/, 2 arrays, b[i] = max(b[i-x] + 1 for a[i-x] < a[i]) c[i] = max(c[i-x] + 1 for a[i-x] > a[i], b[i-x] + 1 for a[i-x] > a[i])
+	- ex: https://www.geeksforgeeks.org/maximum-sum-increasing-subsequence-dp-14/, extra array for max sum
+	- ex: https://practice.geeksforgeeks.org/problems/convert-to-strictly-increasing-array3351/1#
+	- ex: https://www.geeksforgeeks.org/maximum-product-increasing-subsequence/, extra array for max mult
+	- ex: https://www.geeksforgeeks.org/longest-subsequence-such-that-difference-between-adjacents-is-one/, possivel rodar em O(n)
+	- ex: https://practice.geeksforgeeks.org/problems/max-length-chain/1 - sort, to print the pairs just save for each one the previous
+	- ex: https://www.geeksforgeeks.org/maximum-sum-such-that-no-two-elements-are-adjacent/, https://www.geeksforgeeks.org/maximum-sum-subsequence-least-k-distant-elements/ d[i][2] onde (0 - primeiro elemento, 1 - segundo elemento não é pego) d[i][0] = d[i-1][1] + a[i], d[i][1] = max(d[i-1][0], d[i-1][1])
+	- ex: https://www.geeksforgeeks.org/maximum-subsequence-sum-such-that-no-three-are-consecutive/, d[i][3] onde (3 - 0 = 1 elemento, 1 = segundo elemento, 2 = terceiro elemento (não é pego)) d[i][0] = d[i-1][2] + a[i], d[i][1] = d[i-1][0] + a[i], d[i][2] = max(d[i-1][j] for j = 0,1,2)
+	- ex: https://www.geeksforgeeks.org/find-minimum-sum-one-every-three-consecutive-elements-taken/, d[i][0] = min(d[i-1][1], d[i-1][1]) + a[i], d[i][1] = min(d[i-1][0], d[i-2][0])
+	- ex: https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1 (kadanes algorithm or prefix keeping the minimum prefix)
+	- ex: https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1 (kadanes)
+	- ex: https://practice.geeksforgeeks.org/problems/pairs-with-specific-difference/0
+	- ex: https://www.geeksforgeeks.org/recursively-break-number-3-parts-get-maximum-sum/
+	- ex: https://www.geeksforgeeks.org/maximum-path-sum-position-jumps-divisibility-condition/
+	- ex: https://practice.geeksforgeeks.org/problems/minimum-time1238/1
+	- ex: https://practice.geeksforgeeks.org/problems/sum-of-all-substrings-of-a-number-1587115621/1, d[i] = d[i-1]*10 + a[i]*i, sum all d
+	- ex: https://www.geeksforgeeks.org/count-ways-build-street-given-constraints/, d[i] = d[i-1] + 2*(d[i-1] - k[i]), k[1] = 1, k[i] = (d[i-2] - k[i-1]) sendo k = (número de possiblidade do ultimo bloco ser H/O, que é igual ao numero de possibilidades do ultimo bloco ser O/H)  outra fórmula: d[0] = 3, d[i] = d[i-1] + 2*k[i], k[0] = 1, k[i] = d[i-1] - k[i-1]  
+	- ex: https://practice.geeksforgeeks.org/problems/sequence-of-sequence1155/1, estado (i,j) indica posição i no array com valor j, nesse casso a posição i pode ter valor j e então i-1 será no máximo j/2 ou pode ter valor j-1, então d[i][j] = d[i-1][j/2] + d[i][j-1]
+	- ex: https://www.geeksforgeeks.org/count-subsequences-product-less-k/, dp[k][n] -> numero de sequencias com produto menor que k contento os primeiros n elementos,  d[i][j] = d[i][j-1] + d[i/a[j]][j-1] + a[j] <= i
+	- ex: https://www.geeksforgeeks.org/longest-alternating-positive-negative-subarray-starting-every-index/ - mater a maior sequencia até i em d[i]
+	- ex: https://practice.geeksforgeeks.org/problems/temple-offerings2831/1, se anterior for menor soma anterior++, se for igual soma um, se for menor somar anterior-- até chegar a 0, a partir daí somar o tamanho da sequencia de menores (quando essa sequencia for maior que o inicio somar sequencia+1)  
+	- ex: https://www.geeksforgeeks.org/box-stacking-problem-dp-22/, gerar todas as possibilidades de lado (lw wl hw wh hl lh), sort pela primeiro lado e achar o LIS desses pairs, mantendo um terceiro atributo que é a altura maxima
+	- ex: https://www.geeksforgeeks.org/highway-billboard-problem/, d[i] = max(d[i-1], d[i-x] + a[i]) onde x é o offset minimo necessário para manter a condição de distancia
+	- ex: https://www.geeksforgeeks.org/maximum-sum-alternating-subsequence-sum/
+	- ex: https://www.geeksforgeeks.org/longest-common-increasing-subsequence-lcs-lis/, rodar lcs e então achar lis em O(n)
+	- ex: https://www.geeksforgeeks.org/variations-of-lis-dp-21/, https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+	- ex: https://www.geeksforgeeks.org/count-number-increasing-subsequences-size-k/
+	- ex: https://www.geeksforgeeks.org/non-decreasing-subsequence-of-size-k-with-minimum-sum/
+	- ex: https://practice.geeksforgeeks.org/problems/longest-zig-zag-sub-sequence/0#, imagina uma função com maximos e minimos, o resultado é a soma desses maximos e minimos.
+	- ex: https://www.geeksforgeeks.org/construction-of-longest-monotonically-increasing-subsequence-n-log-n/, lis em O(nlogn)
+	- ex: https://www.geeksforgeeks.org/longest-common-subsequence-with-at-most-k-changes-allowed/, achar o lcs e somar k
+	- ex: https://www.geeksforgeeks.org/weighted-job-scheduling-set-2-using-lis/, lis, pode rodar em O(nlogn) como o lis acima
+	- ex: https://www.geeksforgeeks.org/coin-game-winner-every-player-three-choices/, d[i] = true ou false, indicando que se algum jogador chegar a i moedas ele ganha (true). d[0] = false, d[i] = !d[i-1] || !d[i-x] || !d[i-y]
+	- ex: https://www.geeksforgeeks.org/count-all-increasing-subsequences/, array m[10] que salva o número de subsequencias terminadas em i, d[i] = soma(a[k]) para k <= a[i]
+	- ex: https://www.geeksforgeeks.org/count-possible-ways-to-construct-buildings/, d[i][0] = d[i-1][1], d[i][1] = d[i-1][0] + d[i-1][1], ans = (d[n][1] + d[n][0])^2 
+	- ex: https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/, d[i] = d[i-1] + d[i-2] se os numeros forem possiveis
+	- ex: https://www.geeksforgeeks.org/maximum-profit-sale-wines/, d[n+1][n+1] (i,j) indica que faltam os vinhos de i até j. d[0][n] = (0,0) d[i][j] = max(d[i-1][j].first + d[i-1][j].second * a[i], mesmo para d[i][j+1] * a[j]) procurar resposta em d[i][i]
+	- ex: https://www.geeksforgeeks.org/maximum-sum-subarray-removing-one-element/, usar kadanes para salvar soma maxima que termina em cada i, de 0 até i e de i até n-1 (forward e backward). após isso tentar remover cada indice i, max_0_x[i-1] + max_x_n-1[i+1];
+	- ex: https://www.geeksforgeeks.org/maximum-product-subarray-added-negative-product-case/, parecido com kadanes
+	- ex: https://www.geeksforgeeks.org/k-maximum-sums-non-overlapping-contiguous-sub-arrays/, rodar kadanes k vezes
+	- ex: https://www.geeksforgeeks.org/maximum-average-sum-partition-array/, 
+	- ex: https://www.geeksforgeeks.org/minimum-insertions-sort-array/, size - lis
+	- ex: https://www.geeksforgeeks.org/remove-minimum-elements-either-side-2min-max/, parcedio com (profit-sales-wine) com alguma estrutura pra manter max e min
+	- ex: https://www.geeksforgeeks.org/modify-array-to-maximize-sum-of-adjacent-differences/, d[i][2] (0 - igual, 1 muda), d[i][0] = max(d[i-1][0] + |a[i-1] - a[i]|, d[i-1][1] + |1 - a[i]|)
+	- ex: https://www.geeksforgeeks.org/pyramid-form-increasing-decreasing-consecutive-array-using-reduce-operations/
+	- ex: https://www.geeksforgeeks.org/painters-partition-problem/, (i,j) max tempo com i pintores e a[0..j] d[i][j] = min(max(d[i-1][j-x] + prefixsum[j] - prefixsum[x])) para todo x [0..j] / min(max) = binary search											
+	- ex: https://www.geeksforgeeks.org/maximum-subarray-sum-using-prefix-sum/, keep the minimum
+	- ex: https://www.geeksforgeeks.org/k-maximum-sum-overlapping-contiguous-sub-arrays/, para cada prefixsum[i] subtraia os k menores prefixsum[j] em [0..i-1], de todos as subtrações salve as k maiores.
+	- ex: https://www.geeksforgeeks.org/longest-subarray-sum-divisible-k/, salvar prefixmod[i] em um map para a primeira aparição de cada resto possível, ans = max(i - map[prefixmod[i]])
+	- ex: https://www.geeksforgeeks.org/maximum-sum-bitonic-subarray/m, considerar que deve ser subarray continuo
+	- ex: https://www.geeksforgeeks.org/maximize-arrj-arri-arrl-arrk-such-that-i-j-k-l/, 4 tabelas d[0][j] = max(a[j], d[j+1]), d[1][j] = max(d[0][j+1] - a[j], d[1][j+1]) para cada parte da soma
+	- ex: https://www.geeksforgeeks.org/longest-arithmetic-progression-dp-35/, https://www.geeksforgeeks.org/longest-geometric-progression/ (i,j) - llap com a[i] e a[j] como primeiros elementos
+	- ex: http://codeforces.com/contest/1373/problem/D, algo para funçoes em subvetores, d[0][i] = d[0][i-1] + a[i] se i%2==0, d[1][i] = max(d[0][i-2], d[1][i-2]) + a[i]/a[i-1] (impar) d[2][i] = max(d[1][i-1], d[2][i-1]) + a[i] se i%2==0, antes/durante/depois
+ 	- ex: http://codeforces.com/contest/1355/problem/B, d[i+a[i]] = max(d[i+a[i]], d[i] + 1)
+ 	- ex: http://codeforces.com/contest/1350/problem/B, for each position run through all its multiples and update d[multiple] = d[i] + 1
+ 	- ex: https://codeforces.com/contest/977/submission/95016133, using map
+ 	- ex: https://codeforces.com/contest/628/problem/B, e se a pergunta fosse subsequencias?
+ 	- ex: https://codeforces.com/contest/234/problem/C, a[i] = numero de trocas pra deixar todos negativos (0..i), b[i] = numero de trocas pra deixar todos positivos (i..n), ou conta todos os negativos primeiro e vai de (0..i) atualizando ans = neg+pos+zeros
+ 	- ex: https://codeforces.com/contest/455/problem/A, d[i] = max(d[i-1], i*occurences[i] + d[i-2])
+ 	- ex: https://codeforces.com/contest/1418/problem/C, d[0][i] = min terminado no meu turno de (0..i), d[1][i] = min terminado no turno dele (0..i), d[0][0] = a[0], d[0][1] = a[0] + a[1], d[1][1] = d[0][0], d[0][2] = d[1][1] + a[2], d[0][i] = min(d[1][i-1], d[1][i-2])
+ 	- ex: https://codeforces.com/contest/1195/problem/C
+ 	- ex: https://codeforces.com/contest/1474/problem/D, calculate p[i] = amount of stones left removing first ((0,1), (1,2)) and s[i] = amount of stones left removing first ((n-1,n), (n-2,n-1)), then is possible if for any a[i] and a[i-1] -> a[i+1] - p[i] == a[i] - s[i+2] (p[i] <= a[i+1] and s[i+2] <= a[i]), also p[i] == s[i] == -1 if its impossible
+ 	- ex: https://codeforces.com/problemset/problem/30/C
+ 	- ex: https://codeforces.com/contest/1475/problem/G
+ 	- ex: https://codeforces.com/contest/66/problem/E, for a starting point p, we only need to check wether the minimum of (a[p]-b[p], a[p]-b[p] + a[p+1]-b[p+1], ...) is going to be >= than 0, to transition from p to p+1 as starting point notice that all the a[p]-b[p]+.. will be shifted by a[p]-b[p] (so we can just shift the minimum) as p isnt the starting point anymore
+ 	- ex: https://codeforces.com/contest/82/problem/D, nice reconstruction, every time you pick two the next two from queue are now in the 3 firsts, so we can declare a state based on that: d[i][j] -> minimum time until i leaving jth customer unselected (also save the one we left unselected in i-2 to reconstruction), see implementation for transitions
+ 	- ex: https://codeforces.com/contest/201/problem/C, for every starting position try to calculate (4 states): d[i][0] maximum going right and coming back, d[i][1] maximum going right and not coming back, d[i][2] max going left and coming back, d[i][3] same
+	- ex: https://codeforces.com/contest/1509/problem/C, state (l,r) on sorted array. adding the max or min element to the end is optimal.
+	
+	
+	
+problemas com matrizes:
+	https://cp-algorithms.com/dynamic_programming/zero_matrix.html
+	- ex: https://practice.geeksforgeeks.org/problems/largest-square-formed-in-a-matrix/0, d[i][j] = (a[i][j] == 0) ? 0 : min(i-1, j-1, i-1 j-1) + 1 keep largest square with i,j as bottom right
+	- ex: https://www.geeksforgeeks.org/counts-paths-point-reach-origin/
+	- ex: https://www.geeksforgeeks.org/minimum-sum-submatrix-given-2d-array/, kadanes O(n) em todas as combinações de colunas (i,j)
+	- ex: https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/, d[i][j] = min(d[i-1][j-1], d[i-1][j], d[i][j-1]) + 1 se todos os elementos sao iguais
+	- ex: https://www.geeksforgeeks.org/maximum-points-collected-by-two-persons-allowed-to-meet-once/, 
+	- ex: https://www.geeksforgeeks.org/find-length-of-the-longest-consecutive-path-in-a-character-matrix/
+	- ex: https://www.geeksforgeeks.org/maximize-binary-matrix-filpping-submatrix/, somente com submatrix quadrada, testar todos as matrizes k por k para todo (i,j) ans = max(ones[R][C] (1's em toda matriz) + k*k (tamanho) - 2*ones(k*k) (um menos para cada termo somado))
+	- ex: https://www.geeksforgeeks.org/number-of-palindromic-paths-in-a-matrix/
+	- ex: https://www.geeksforgeeks.org/maximum-sum-rectangle-in-a-2d-matrix-dp-27/
+	- ex: https://www.geeksforgeeks.org/check-whether-row-column-swap-produces-maximum-size-binary-sub-matrix-1s/, uma pra linha e uma pra coluna, trasição da col é inverso da linha, linha: cnt[i][j] = soma da coluna j até linha i, l[i][j] = min(sequencia de 1's terminado na coluna j considerando linhas 0..i), dp[i][j] = cnt[i][j] * l[i][j] se == 1, dp[i-1][j] se == 0
+	- ex: https://www.geeksforgeeks.org/maximum-points-top-left-matrix-bottom-right-return-back/, parecido com palindromic paths com tempo reduzido usando x1 + y1 = x2 + y2
+	- ex: http://codeforces.com/contest/812/problem/B, dp could be used but its not necessary since n is small we can brute force
+	- ex: https://codeforces.com/contest/611/problem/C
+	- ex: https://codeforces.com/contest/41/problem/D, d[n][m][k] = maxima soma na pos (i,j) com resto k, rodar uma vez para cada coluna, usar uma matrix apontando a posição anterior pra reconstruir a resposta
+	- ex: https://codeforces.com/contest/213/problem/C, corredor 1 = (i,j) e corredor 2 = (k,l), i + j = k + l, state (i,j,k), one transition for each possible combination of moves (down,down - down,right etc)
+	- ex: https://codeforces.com/contest/18/problem/E
+
+
+
+problemas que constroem a solução a partir de ranges menores:
+	- ex: https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/
+	- ex: https://www.geeksforgeeks.org/minimum-sum-of-multiplications-of-n-numbers/
+	- ex: https://www.geeksforgeeks.org/minimum-maximum-values-expression/
+	- ex: https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
+	- ex: https://www.geeksforgeeks.org/printing-brackets-matrix-chain-multiplication-problem/
+	- ex: https://www.geeksforgeeks.org/minimum-cost-polygon-triangulation/
+	- ex: https://www.geeksforgeeks.org/all-ways-to-add-parenthesis-for-evaluation/ (?)
+		
+	
+	
+problemas com grafos:
+	- ex: https://www.geeksforgeeks.org/vertex-cover-problem-set-2-dynamic-programming-solution-tree/, usar recursão e memoization d[i] = min(1 + d[k] para k filho de i, k + d[j] : k = numero filhos de i, j = filhos de filhos de i) (adiciona a raiz ou todos os filhos)
+	- ex: https://www.geeksforgeeks.org/largest-independent-set-problem-dp-26/, memoization : d[i] = max(1 + soma de d[netos de i], soma de d[filhos de i])
+	- ex: https://www.geeksforgeeks.org/count-possible-paths-source-destination-exactly-k-edges/, d[n][m][k] (i,j,k) numero de caminhos de i para j com k vertices d[i][j][k] = soma(d[a][j][k-1] se g[a][j] == true para todo a adjacente de i)
+	- ex: https://www.geeksforgeeks.org/shortest-path-exactly-k-edges-directed-weighted-graph/
+	- ex: https://www.geeksforgeeks.org/sub-tree-minimum-color-difference-2-coloured-tree/
+	- ex: https://www.geeksforgeeks.org/optimal-binary-search-tree-dp-24/
+	- ex: https://www.geeksforgeeks.org/multistage-graph-shortest-path/
+	- ex: https://www.geeksforgeeks.org/number-ways-form-heap-n-distinct-integers/
+	- ex: https://www.geeksforgeeks.org/traversal-tree-ability-jump-nodes-height/
+	- ex: http://codeforces.com/contest/212/problem/E, para cada node (root) e cada subgraph (tamanho sz), bitmask_node = bitmask_node | (bitmask_node << sz), bitmask_node[sz] = 1, ans |= bitmask_node, ans[i] = 1 se é possível separar entre i e n-i-1  
+	- ex: https://codeforces.com/contest/615/problem/B, d[i] = d[adj] + 1 se (adj < i) for each i update ans = max(ans, d[i] * degree[i])
+	- ex: https://codeforces.com/contest/855/problem/C, state (node,type,qtd) type=[less,equal,greater] than k. transition: d[i][0][k] = d[i][0][l] * (d[adj][[0][k-l] + d[adj][1][k-l] + d[adj][2][k-l]) etc. 
+	- ex: https://codeforces.com/contest/919/problem/D, state (node,letter) d[adj][l] = max(d[adj][l], d[n][l]) -> forward 
+	
+	
+problemas com bitmasks:
+	https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
+	https://www.geeksforgeeks.org/travelling-salesman-problem-set-1/ 
+	https://www.geeksforgeeks.org/tag/xor/
+	https://www.geeksforgeeks.org/category/algorithm/bit-magic/
+	- ex: https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
+	- ex: https://www.geeksforgeeks.org/bit-tricks-competitive-programming/
+	- ex: https://www.geeksforgeeks.org/print-bitwise-and-set-of-a-number-n/
+	- ex: https://www.geeksforgeeks.org/sum-subsets-dynamic-programming/
+	- ex: https://www.geeksforgeeks.org/number-ordered-pairs-ai-aj-0/
+
+
+
+não lidos:
+	https://www.geeksforgeeks.org/choose-maximum-weight-given-weight-value-ratio/
+	https://www.geeksforgeeks.org/count-sum-of-digits-in-numbers-from-1-to-n/
+	https://www.geeksforgeeks.org/sum-products-combination-taken-1-n-time/
+	https://www.geeksforgeeks.org/program-bridge-torch-problem/
+	https://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/
+	https://www.geeksforgeeks.org/count-arithmetic-progression-subsequences-array/
+
+

@@ -1,0 +1,90 @@
+problemas com backtracking:
+	https://www.geeksforgeeks.org/backtracking-algorithms/ 
+	https://www.geeksforgeeks.org/the-knights-tour-problem-backtracking-1/
+	https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
+	https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/
+	https://www.geeksforgeeks.org/hamiltonian-cycle-backtracking-6/
+	https://www.geeksforgeeks.org/sudoku-backtracking-7/
+	https://www.geeksforgeeks.org/solving-cryptarithmetic-puzzles-backtracking-8
+	
+
+
+problemas com divide and conquer:
+	http://codeforces.com/contest/768/problem/B, dac with a little dp
+	https://codeforces.com/contest/1385/problem/D, dp could be implemented for (i,j,c) if was longer
+
+
+
+problemas greedy:
+	https://codeforces.com/contest/1380/problem/B
+	https://codeforces.com/contest/1250/problem/B
+	https://codeforces.com/contest/1418/problem/B
+	https://codeforces.com/contest/439/problem/D
+	https://codeforces.com/contest/224/problem/B
+	https://codeforces.com/contest/915/problem/C
+	https://codeforces.com/contest/74/problem/B
+	https://codeforces.com/contest/638/problem/D, X_A_Y, A is critical is X and Y are computers, _| the corner is critical if the both endpoints are computers and the diagonal cell is off
+	https://codeforces.com/contest/1469/problem/C, at every increasing part (start at max height possible) check if we can reach an height > than the top by increasing the maximum possible, at every decreasing part (start at min height possible) check if we can reach the bottom decreasing the maximum possible at each step
+	https://codeforces.com/problemset/problem/95/B, try easier solution (current involves multiple cases)
+	https://codeforces.com/problemset/problem/1442/B, can also be solved with dsu, notice that if both a[i-1] and a[i+1] are not after a[i] in b we can delete either of them (x2) and this wont change the next element in b to be considered, because then a[i] can also be deleted
+	https://codeforces.com/contest/1473/problem/C, notice that if a = [1 2 (3 4 5 6 5 4 3)] only the part in () has inversions (it has all the inversions) any way you change the numbers positions (mantaining the mirror property) the number of inversions remains the same, so the max lexicographically is (6 5 4 3 4 5 6)
+	https://codeforces.com/contest/1474/problem/C, first, notice that the greatest element remaining should be picked every iteration, now brute force a[0] and a[i] and simulate the rest with a multiset to see if its possible 
+	https://codeforces.com/contest/1463/problem/B, S = odd + even position
+	https://codeforces.com/contest/732/problem/E
+	https://codeforces.com/contest/727/problem/D, start by the one shirts, then check que two shirts greedily starting from S
+	https://codeforces.com/contest/44/problem/J
+	https://codeforces.com/contest/1479/problem/B1, avoid concatenation, example: 3 3 1 2 3 3 - observe the 2, for position i, if its different from both last elements on (0) and (1) add to the one which last appears earlier in the remaining elements to pick
+	https://codeforces.com/contest/1479/problem/B2, seek concatenation, reverse from last, if ith element is different from both last element add to the one which last elemente appears later in remaining elements
+	https://codeforces.com/contest/45/problem/E
+	https://codeforces.com/contest/704/problem/A
+	http://codeforces.com/contest/1487/problem/C
+	http://codeforces.com/contest/1490/problem/F
+	https://codeforces.com/contest/591/problem/C
+	https://codeforces.com/contest/1509/problem/B
+	https://codeforces.com/contest/1491/problem/C
+	https://codeforces.com/contest/830/problem/A, it can be prove that the selected keys must be in sequence. 
+
+
+problemas com games:
+	https://codeforces.com/contest/1382/problem/B
+	
+
+
+problemas com two pointers:
+	https://codeforces.com/contest/1450/problem/D, (n and 1)-compression are trivial, going from n-1-compression to 2-compression, the limits [l=0,r=n-1] should be a minimal and unique element (n-1 should be 1, n-2 should be 2...) on one of the pointers (update l++/r-- and element++). once is false is always false until 2-compression   
+	https://codeforces.com/contest/10/problem/B, prefix sum on rows and used matrix, two pointers to find range on row
+	https://codeforces.com/contest/580/problem/B
+	https://codeforces.com/contest/1382/problem/C2, two pointers on string endpoints, change one bit at a time, always flip the first bit or r-l+1
+	https://codeforces.com/contest/958/problem/F1, easier if we compute s = sum(a[i]) we know that s is the size interval
+	https://codeforces.com/contest/1462/problem/E1, https://codeforces.com/contest/1462/problem/E2 second one precompute C(n,m) using dp, we could also use binary search to find elements in range [x, x+k] and combine them
+	https://codeforces.com/contest/180/problem/E, divide in intervals for each color and find maximum sum with k >= 0 in each color using two pointers
+	https://codeforces.com/contest/1475/problem/D
+	https://codeforces.com/contest/1463/problem/D
+
+
+
+problemas com matriz:
+	https://codeforces.com/contest/1475/problem/F, forçar os da primeira linha e os da primeira coluna, agora se no resto da matriz algum não bater não existe resposta, isso acontece pq dentro de cada subretangulo se 3 de seus cantos estão certos e um está errado é impossível corrigir (nós forçamos 3 dos cantos estarem certos) 
+	http://codeforces.com/contest/1365/problem/D, block greedily all bad persons then check if final place can reach all good persons using dp
+	https://codeforces.com/contest/1323/problem/B, for every range (l,r) with ones add a[1] += r-l, a[2] += r-l-1 until a[r-l] += 1 (could use suffix sum as a[x] += a[x+1] + 1), after go through all possible x.y = k (ans += a[x]*b[y])
+	
+
+
+problemas com pure implementation:
+	http://codeforces.com/contest/1352/problem/E, generate all sums
+	https://codeforces.com/contest/1348/problem/B, cyclic
+	https://codeforces.com/contest/1365/problem/C
+	https://codeforces.com/contest/1375/problem/C
+	https://codeforces.com/contest/1371/problem/C, depends on the second type
+	https://codeforces.com/contest/117/problem/A
+	https://codeforces.com/contest/793/problem/B, get all edges reachable by zero or one turns by brute force
+	https://codeforces.com/contest/1250/problem/A
+	https://codeforces.com/contest/323/problem/A
+	https://codeforces.com/contest/863/problem/C, look for first repetition of state
+	https://codeforces.com/contest/1463/problem/C, for each command calculate triple (e,d,pos) e = is command executed, d = direction (1, -1) and pos = position at moment command is received
+	https://codeforces.com/contest/44/problem/J, go from left to right and top to bottom, if we find a B first its impossible, if we find a W give preference to horizontal matching (why?), color greedily (why are 4 colors always enough?)
+	https://codeforces.com/contest/811/problem/D, first build path, then find controls.
+
+	
+	
+	

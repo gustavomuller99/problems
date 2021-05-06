@@ -1,0 +1,69 @@
+problemas com sets:
+	- ex: http://codeforces.com/contest/1351/problem/C
+	- ex: https://codeforces.com/contest/799/problem/B
+	- ex: https://codeforces.com/contest/1418/problem/D, find biggest gap and break array there
+	- ex: http://codeforces.com/contest/1487/problem/E
+	
+	
+problemas com arrays:
+	- ex: https://codeforces.com/contest/1374/problem/E1
+	
+	
+problemas com prefix / sufix:
+	- ex: https://codeforces.com/contest/177/problem/D2
+	- ex: https://codeforces.com/contest/331/problem/A2
+	- ex: https://codeforces.com/contest/1252/problem/C
+	- ex: https://codeforces.com/contest/1473/problem/D, save min/max for prefix (for prefix save the current value as well) and sufix (min = min(0, sufix[i+1] + d) for min in x..n), every (l,r) shift the min/max from suffix by current on prefix, the number of different is max(maxs, maxp) - min(mins, minp) + 1  
+	- ex: https://codeforces.com/contest/1469/problem/A, if we have only one of each its easy (two cases: ..(..).. and ..)..(.. ), to solve problem for arbitrary number of ('s ans )'s run for -> (stopping to change prefix ?'s every time count[')'] > count['(']) and <- (stopping to change suffix ?'s every time count['('] > count[')']) then check
+	
+	
+problemas com priority queues:
+	- ex: https://leetcode.com/problems/the-skyline-problem/
+	
+	
+problemas com stacks:
+	- ex: https://codeforces.com/contest/821/problem/C, when reorder delete all
+	
+	
+problemas com maps:
+	- ex: https://codeforces.com/contest/501/submission/87382375
+	- ex: https://codeforces.com/contest/204/problem/B
+	- ex: https://codeforces.com/contest/1147/problem/A, (a,b) is impossible only if a is before b in the guesses
+	- ex: https://codeforces.com/contest/733/problem/D
+	
+	
+problemas com segment trees / fenwick / sparse table:
+	https://cp-algorithms.com/data_structures/segment_tree.html
+	https://cp-algorithms.com/data_structures/fenwick.html
+	https://cp-algorithms.com/data_structures/sparse-table.html
+	- ex: https://codeforces.com/contest/316/problem/E3
+	- ex: https://codeforces.com/contest/339/problem/D
+	- ex: https://codeforces.com/edu/course/2/lesson/4/1
+	- ex: https://codeforces.com/edu/course/2/lesson/4/2
+	- ex: https://codeforces.com/edu/course/2/lesson/4/3
+	- ex: https://codeforces.com/edu/course/2/lesson/5/1
+	- ex: https://codeforces.com/edu/course/2/lesson/5/2
+	- ex: https://codeforces.com/edu/course/2/lesson/5/3
+	- ex: http://codeforces.com/contest/374/problem/D
+	
+	
+problemas com deque/queue:
+	- ex: https://codeforces.com/contest/830/problem/B
+	
+problemas com treap:
+	https://cp-algorithms.com/data_structures/treap.html
+	- ex: https://codeforces.com/gym/102787/problem/A
+	- ex: https://codeforces.com/gym/102787/problem/B
+	- ex: https://codeforces.com/gym/102787/problem/Z
+	
+	
+problemas com sqrt decomposition:
+	https://cp-algorithms.com/data_structures/sqrt_decomposition.html
+	https://www.geeksforgeeks.org/mos-algorithm-query-square-root-decomposition-set-1-introduction/
+	
+	
+https://cp-algorithms.com/data_structures/sqrt-tree.html
+https://cp-algorithms.com/data_structures/randomized_heap.html
+https://cp-algorithms.com/data_structures/deleting_in_log_n.html
+
+	

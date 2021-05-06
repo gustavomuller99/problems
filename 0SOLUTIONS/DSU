@@ -1,0 +1,38 @@
+problemas "standard":
+	https://cp-algorithms.com/data_structures/disjoint_set_union.html
+	- ex: https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/C (cuidado ao comprimir)
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/D (cuidado ao comprimir)
+	- ex: https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/E
+	- ex: https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/D
+	- ex: https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/B
+	- ex: https://codeforces.com/contest/1263/problem/D, max resposta é 26, unir todas as letras de uma string em um grupo e no final contar quantos representantes tem em a[26]
+	- ex: http://codeforces.com/contest/1249/problem/B2, unir posições e ao final mostrar o tamanho do grupo de cada elemento
+	- ex: https://codeforces.com/contest/1167/problem/C
+	- ex: https://codeforces.com/contest/1055/problem/B
+	- ex: https://codeforces.com/contest/1139/problem/C, dsu on red 
+	- ex: https://codeforces.com/contest/177/problem/C1
+	- ex: https://codeforces.com/contest/17/problem/B
+	- ex: https://codeforces.com/contest/28/problem/B
+	- ex: https://codeforces.com/contest/722/problem/C, reverse
+	- ex: https://codeforces.com/contest/875/problem/B, ans each stage is all coins added minus (x..n-1) where all a[x .. n-1] are ones (added)
+	- ex: https://codeforces.com/contest/195/problem/E, using compression with path sum
+	
+	
+problemas em arrays:
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/A
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/B
+	- ex: https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/C
+	- ex: https://codeforces.com/contest/843/problem/A
+	- ex: https://codeforces.com/contest/566/problem/D, using next[i] for range merges
+	
+	
+problemas com rollback / dco:
+	- ex: https://codeforces.com/edu/course/2/lesson/7/3/practice/contest/289392/problem/A
+	- ex: https://codeforces.com/edu/course/2/lesson/7/3/practice/contest/289392/problem/B
+	- ex: https://codeforces.com/edu/course/2/lesson/7/3/practice/contest/289392/problem/C
+
+https://codeforces.com/edu/course/2/lesson/7/2	
+https://codeforces.com/edu/course/2/lesson/7/3
+- mst on graphs
+
+	

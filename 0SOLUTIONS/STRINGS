@@ -1,0 +1,34 @@
+problemas sem algoritmos especificos:
+	- ex: http://codeforces.com/contest/1360/problem/F, brute force
+	- ex: http://codeforces.com/contest/1332/problem/C, for every position compute the indices it must be equal to, get letter with most occurance
+	- ex: https://codeforces.com/contest/1466/problem/C, change all palindromes of length 3 and 2
+	- ex: https://codeforces.com/contest/1328/problem/B, fix first b position +1 strings, +2, +3, +4 strings, +5 strings
+	
+
+problemas com string matching:
+	https://cp-algorithms.com/string/manacher.html
+	https://cp-algorithms.com/string/prefix-function.html
+	https://cp-algorithms.com/string/rabin-karp.html
+	- ex: https://codeforces.com/contest/471/problem/D, use difference array a[i] - a[i-1] look for pattern of change
+	- ex: https://codeforces.com/gym/101962/problem/B, dp solution (?) kmp solution (?)
+	- ex: http://codeforces.com/contest/1326/problem/D2
+	
+	
+problemas com suffix array:
+	https://cp-algorithms.com/string/suffix-array.html
+	https://codeforces.com/edu/course/2/lesson/2/2
+	https://codeforces.com/edu/course/2/lesson/2/1
+	https://codeforces.com/edu/course/2/lesson/2/3
+	https://codeforces.com/edu/course/2/lesson/2/4
+	https://codeforces.com/edu/course/2/lesson/2/5
+	
+	
+https://cp-algorithms.com/string/z-function.html
+https://cp-algorithms.com/string/aho_corasick.html
+https://cp-algorithms.com/string/main_lorentz.html
+https://cp-algorithms.com/string/expression_parsing.html
+https://cp-algorithms.com/string/lyndon_factorization.html
+https://cp-algorithms.com/string/suffix-automaton.html
+https://cp-algorithms.com/string/suffix-tree-ukkonen.html
+
+

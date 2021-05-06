@@ -1,0 +1,25 @@
+problemas "standard":
+	- ex: http://codeforces.com/contest/1362/problem/C, ans = sum(n/(2^x)) for 2^x < n 
+	- ex: https://codeforces.com/contest/912/problem/B 
+	- ex: https://codeforces.com/contest/1095/problem/C
+	- ex: https://codeforces.com/contest/1312/problem/C
+	- ex: https://codeforces.com/contest/114/problem/B, or 0-1 coloring (?)
+	- ex: https://codeforces.com/contest/49/problem/D, we need to put all 1's in odd positions and all 0's in even positions (or the contrary), for a subpart where all the elements are in the wrong parity we take size(subpart) to fix their parity, so the ans is S=(a[i] == i%2 1 at odd and 0 at even) or n-S (0 at odd and 1 at even) 
+	
+	
+problemas com operações:
+	- ex: http://codeforces.com/contest/1362/problem/B, brute force check if every element exists.
+	- ex: https://codeforces.com/contest/1152/problem/B
+	- ex: https://codeforces.com/contest/238/problem/A, prefix xor must have all integers different (in range 0 -> 2^m - 1)
+	- ex: https://codeforces.com/contest/1270/problem/C
+	- ex: https://codeforces.com/contest/437/problem/B, get the low bit = x & (x ^ x-1) or x & -x
+	- ex: https://codeforces.com/contest/501/problem/C, start by the vertexes with degree one and undo the xor
+	- ex: https://codeforces.com/gym/101962/problem/E
+	- ex: https://medium.com/free-code-camp/unmasking-bitmasked-dynamic-programming-25669312b77b#927e
+	- ex: https://codeforces.com/contest/923/problem/C, 1a sol.  2a sol. build a trie from the permutation starting from the lowest bit
+	- ex: https://codeforces.com/contest/33/problem/D, use bitset to point the fences around kinght x (brute force with each fence), then while comparing two knights use xor to cancel the common fences
+	- ex: https://codeforces.com/contest/1491/problem/D, use only numbers of the form 0010..0 = 2^n (every sum can be represented as a series of sums of powers of two) then the path exists if u < v, cntbits(u) >= cntbits(v) and the low bit from u is always less than the low bit from v (since we can push u bits forward by sum and also make them disappear)
+	- ex: http://codeforces.com/contest/1016/problem/D, condition: xor(a) == xor(b) == xor(all elements). element [0][0] = a0 xor b1 xor b2 ... bm. [0][1] = b1, [0][2] = b2, etc. [1][0] = a1, [2][0] = a2, etc. rest = 0 (so that [0][0] when xored with the same column becomes b0 and when xored with the same row becomes a0).
+	
+	
+	
